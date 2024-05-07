@@ -1,4 +1,4 @@
-package database
+package vectordatabase
 
 import (
 	"fmt"
@@ -10,11 +10,11 @@ import (
 )
 
 func Initialize() *gorm.DB {
-	dsn := os.Getenv("DB_DSN")
+	dsn := os.Getenv("VECTOR_DB_DSN")
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("connected to db")
+	fmt.Println("connected to vector db")
 	return db
 }

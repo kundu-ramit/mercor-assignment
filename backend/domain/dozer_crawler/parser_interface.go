@@ -3,7 +3,7 @@ package scraper
 import (
 	"context"
 
-	"github.com/kundu-ramit/dozer_match/domain/entity"
+	"github.com/kundu-ramit/mercor_assignmentgnmentgnment/domain/entity"
 )
 
 type Parser interface {

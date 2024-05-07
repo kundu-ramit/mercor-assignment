@@ -4,11 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/kundu-ramit/dozer_match/cmd"
-	"github.com/kundu-ramit/dozer_match/infra/database"
-	"github.com/kundu-ramit/dozer_match/infra/redis"
-
-	"github.com/kundu-ramit/dozer_match/routes"
+	"github.com/kundu-ramit/mercor_assignment/cmd/skills"
+	"github.com/kundu-ramit/mercor_assignment/infra/database"
 )
 
 func main() {
@@ -22,26 +19,30 @@ func main() {
 
 	// Handle the command
 	switch args[0] {
-	case "server":
-		startServer()
-	case "migration":
-		applyMigration()
+	case "seed":
+		applySeed(args[1])
 	default:
 		log.Fatal("Invalid command:", args[0])
 	}
 }
 
-func applyMigration() {
+func applySeed(arg string) {
 
-	db := database.Initialize()
-	cmd.ApplyMigration(db)
+	switch arg {
+	case "fetchskills":
+		db := database.Initialize()
+		//vectordb := vectordatabase.Initialize()
+		skills.FetchSkills(db)
+	case "fetchskillvector":
+		skills.FetchSkillVectorOpenAi()
+	}
 
 }
 
-func startServer() {
+// func startServer() {
 
-	database.Initialize()
-	redis.Initialize()
-	r := routes.SetupRouter()
-	r.Run(":8002")
-}
+// 	database.Initialize()
+// 	redis.Initialize()
+// 	r := routes.SetupRouter()
+// 	r.Run(":8002")
+// }

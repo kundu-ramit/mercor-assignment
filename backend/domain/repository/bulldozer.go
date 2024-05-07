@@ -3,8 +3,8 @@ package repository
 import (
 	"context"
 
-	"github.com/kundu-ramit/dozer_match/domain/entity"
-	"github.com/kundu-ramit/dozer_match/infra/database"
+	"github.com/kundu-ramit/mercor_assignment/domain/entity"
+	"github.com/kundu-ramit/mercor_assignment/infra/database"
 	"gorm.io/gorm"
 )
 

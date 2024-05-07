@@ -9,8 +9,8 @@ import (
 	"os"
 	"strings"
 
-	scraper "github.com/kundu-ramit/dozer_match/domain/dozer_crawler"
-	"github.com/kundu-ramit/dozer_match/domain/entity"
+	scraper "github.com/kundu-ramit/mercor_assignmentgnment/domain/dozer_crawler"
+	"github.com/kundu-ramit/mercor_assignmentgnment/domain/entity"
 )
 
 type gptParser struct{}

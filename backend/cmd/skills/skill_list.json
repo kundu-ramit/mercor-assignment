@@ -1,0 +1,242 @@
+[
+    {
+      "customText": "Person is skilled in Speech generation",
+      "skillId": "0bfbda41-7746-11ee-accf-42010a400014",
+      "skillName": "Speech generation"
+    },
+    {
+      "customText": "Person is skilled in Audio generation",
+      "skillId": "1da65325-7746-11ee-accf-42010a400014",
+      "skillName": "Audio generation"
+    },
+    {
+      "customText": "Person is skilled in Web scraping",
+      "skillId": "27428a49-7746-11ee-accf-42010a400014",
+      "skillName": "Web scraping"
+    },
+    {
+      "customText": "Person is skilled in Adobe",
+      "skillId": "5f9e5a7d-7517-11ee-accf-42010a400014",
+      "skillName": "Adobe"
+    },
+    {
+      "customText": "Person is skilled in AWS",
+      "skillId": "5f9e626b-7517-11ee-accf-42010a400014",
+      "skillName": "AWS"
+    },
+    {
+      "customText": "Person is skilled in Azure",
+      "skillId": "5f9e6469-7517-11ee-accf-42010a400014",
+      "skillName": "Azure"
+    },
+    {
+      "customText": "Person is skilled in Bootstrap",
+      "skillId": "5f9e65ed-7517-11ee-accf-42010a400014",
+      "skillName": "Bootstrap"
+    },
+    {
+      "customText": "Person is skilled in C",
+      "skillId": "5f9e66a8-7517-11ee-accf-42010a400014",
+      "skillName": "C"
+    },
+    {
+      "customText": "Person is skilled in C++",
+      "skillId": "5f9e6792-7517-11ee-accf-42010a400014",
+      "skillName": "C++"
+    },
+    {
+      "customText": "Person is skilled in C#",
+      "skillId": "5f9e6943-7517-11ee-accf-42010a400014",
+      "skillName": "C#"
+    },
+    {
+      "customText": "Person is skilled in Computer Vision",
+      "skillId": "5f9e6a43-7517-11ee-accf-42010a400014",
+      "skillName": "Computer Vision"
+    },
+    {
+      "customText": "Person is skilled in Docker",
+      "skillId": "5f9e6b03-7517-11ee-accf-42010a400014",
+      "skillName": "Docker"
+    },
+    {
+      "customText": "Person is skilled in Django",
+      "skillId": "5f9e6bb8-7517-11ee-accf-42010a400014",
+      "skillName": "Django"
+    },
+    {
+      "customText": "Person is skilled in Excel",
+      "skillId": "5f9e6c6e-7517-11ee-accf-42010a400014",
+      "skillName": "Excel"
+    },
+    {
+      "customText": "Person is skilled in Express.js",
+      "skillId": "5f9e6d20-7517-11ee-accf-42010a400014",
+      "skillName": "Express.js"
+    },
+    {
+      "customText": "Person is skilled in Figma",
+      "skillId": "5f9e6ea3-7517-11ee-accf-42010a400014",
+      "skillName": "Figma"
+    },
+    {
+      "customText": "Person is skilled in Flutter",
+      "skillId": "5f9e6f5b-7517-11ee-accf-42010a400014",
+      "skillName": "Flutter"
+    },
+    {
+      "customText": "Person is skilled in GCP",
+      "skillId": "5f9e7011-7517-11ee-accf-42010a400014",
+      "skillName": "GCP"
+    },
+    {
+      "customText": "Person is skilled in Go",
+      "skillId": "5f9e70c9-7517-11ee-accf-42010a400014",
+      "skillName": "Go"
+    },
+    {
+      "customText": "Person is skilled in GraphQL",
+      "skillId": "5f9e747d-7517-11ee-accf-42010a400014",
+      "skillName": "GraphQL"
+    },
+    {
+      "customText": "Person is skilled in HTML/CSS",
+      "skillId": "5f9e75de-7517-11ee-accf-42010a400014",
+      "skillName": "HTML/CSS"
+    },
+    {
+      "customText": "Person is skilled in Java",
+      "skillId": "5f9e7696-7517-11ee-accf-42010a400014",
+      "skillName": "Java"
+    },
+    {
+      "customText": "Person is skilled in JavaScript",
+      "skillId": "5f9e773f-7517-11ee-accf-42010a400014",
+      "skillName": "JavaScript"
+    },
+    {
+      "customText": "Person is skilled in Kotlin",
+      "skillId": "5f9e77ec-7517-11ee-accf-42010a400014",
+      "skillName": "Kotlin"
+    },
+    {
+      "customText": "Person is skilled in Large Language Models",
+      "skillId": "5f9e7896-7517-11ee-accf-42010a400014",
+      "skillName": "Large Language Models"
+    },
+    {
+      "customText": "Person is skilled in Laravel",
+      "skillId": "5f9e7a28-7517-11ee-accf-42010a400014",
+      "skillName": "Laravel"
+    },
+    {
+      "customText": "Person is skilled in NLP",
+      "skillId": "5f9e7add-7517-11ee-accf-42010a400014",
+      "skillName": "NLP"
+    },
+    {
+      "customText": "Person is skilled in Next.js",
+      "skillId": "5f9e7bdf-7517-11ee-accf-42010a400014",
+      "skillName": "Next.js"
+    },
+    {
+      "customText": "Person is skilled in Node.js",
+      "skillId": "5f9e7cf5-7517-11ee-accf-42010a400014",
+      "skillName": "Node.js"
+    },
+    {
+      "customText": "Person is skilled in NoSQL",
+      "skillId": "5f9e7daa-7517-11ee-accf-42010a400014",
+      "skillName": "NoSQL"
+    },
+    {
+      "customText": "Person is skilled in PHP",
+      "skillId": "5f9e7e59-7517-11ee-accf-42010a400014",
+      "skillName": "PHP"
+    },
+    {
+      "customText": "Person is skilled in Powerpoint",
+      "skillId": "5f9e7f0e-7517-11ee-accf-42010a400014",
+      "skillName": "Powerpoint"
+    },
+    {
+      "customText": "Person is skilled in Python",
+      "skillId": "5f9e7fdf-7517-11ee-accf-42010a400014",
+      "skillName": "Python"
+    },
+    {
+      "customText": "Person is skilled in React",
+      "skillId": "5f9e8086-7517-11ee-accf-42010a400014",
+      "skillName": "React"
+    },
+    {
+      "customText": "Person is skilled in React Native",
+      "skillId": "5f9e81e8-7517-11ee-accf-42010a400014",
+      "skillName": "React Native"
+    },
+    {
+      "customText": "Person is skilled in Redux",
+      "skillId": "5f9e8296-7517-11ee-accf-42010a400014",
+      "skillName": "Redux"
+    },
+    {
+      "customText": "Person is skilled in Ruby",
+      "skillId": "5f9e8352-7517-11ee-accf-42010a400014",
+      "skillName": "Ruby"
+    },
+    {
+      "customText": "Person is skilled in Ruby on Rails",
+      "skillId": "5f9e83fb-7517-11ee-accf-42010a400014",
+      "skillName": "Ruby on Rails"
+    },
+    {
+      "customText": "Person is skilled in R",
+      "skillId": "5f9e84a4-7517-11ee-accf-42010a400014",
+      "skillName": "R"
+    },
+    {
+      "customText": "Person is skilled in Rust",
+      "skillId": "5f9e861e-7517-11ee-accf-42010a400014",
+      "skillName": "Rust"
+    },
+    {
+      "customText": "Person is skilled in SQL",
+      "skillId": "5f9e86d4-7517-11ee-accf-42010a400014",
+      "skillName": "SQL"
+    },
+    {
+      "customText": "Person is skilled in Spring",
+      "skillId": "5f9e8782-7517-11ee-accf-42010a400014",
+      "skillName": "Spring"
+    },
+    {
+      "customText": "Person is skilled in Swift",
+      "skillId": "5f9e88ec-7517-11ee-accf-42010a400014",
+      "skillName": "Swift"
+    },
+    {
+      "customText": "Person is skilled in Swift UI",
+      "skillId": "5f9e8a73-7517-11ee-accf-42010a400014",
+      "skillName": "Swift UI"
+    },
+    {
+      "customText": "Person is skilled in Svelte",
+      "skillId": "5f9e8b29-7517-11ee-accf-42010a400014",
+      "skillName": "Svelte"
+    },
+    {
+      "customText": "Person is skilled in TypeScript",
+      "skillId": "5f9e8c99-7517-11ee-accf-42010a400014",
+      "skillName": "TypeScript"
+    },
+    {
+      "customText": "Person is skilled in Vue.js",
+      "skillId": "5f9e8d55-7517-11ee-accf-42010a400014",
+      "skillName": "Vue.js"
+    },
+    {
+      "customText": "Person is skilled in Kubernetes",
+      "skillId": "5f9e8e0c-7517-11ee-accf-42010a400014",
+      "skillName": "Kubernetes"
+    }
+  ]

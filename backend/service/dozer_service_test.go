@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	mocks "github.com/kundu-ramit/dozer_match/domain/mock"
-	"github.com/kundu-ramit/dozer_match/service"
+	mocks "github.com/kundu-ramit/mercor_assignmentgnment/domain/mock"
+	"github.com/kundu-ramit/mercor_assignmentgnment/service"
 	"gopkg.in/go-playground/assert.v1"
 )
 

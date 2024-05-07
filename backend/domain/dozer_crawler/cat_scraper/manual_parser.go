@@ -7,8 +7,8 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 
-	scraper "github.com/kundu-ramit/dozer_match/domain/dozer_crawler"
-	"github.com/kundu-ramit/dozer_match/domain/entity"
+	scraper "github.com/kundu-ramit/mercor_assignmentgnmentgnment/domain/dozer_crawler"
+	"github.com/kundu-ramit/mercor_assignmentgnmentgnment/domain/entity"
 )
 
 type manualParser struct{}

@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	controllers "github.com/kundu-ramit/dozer_match/controller"
+	controllers "github.com/kundu-ramit/mercor_assignment/controller"
 )
 
 func SetupRouter() *gin.Engine {

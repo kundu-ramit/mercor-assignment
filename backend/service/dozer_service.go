@@ -7,11 +7,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/kundu-ramit/dozer_match/domain/cache"
-	scraper "github.com/kundu-ramit/dozer_match/domain/dozer_crawler"
-	catscraper "github.com/kundu-ramit/dozer_match/domain/dozer_crawler/cat_scraper"
-	"github.com/kundu-ramit/dozer_match/domain/entity"
-	"github.com/kundu-ramit/dozer_match/domain/repository"
+	"github.com/kundu-ramit/mercor_assignment/domain/cache"
+	scraper "github.com/kundu-ramit/mercor_assignment/domain/dozer_crawler"
+	catscraper "github.com/kundu-ramit/mercor_assignment/domain/dozer_crawler/cat_scraper"
+	"github.com/kundu-ramit/mercor_assignment/domain/entity"
+	"github.com/kundu-ramit/mercor_assignment/domain/repository"
 )
 
 type DozerService interface {

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/go-redis/redis"
-	rd "github.com/kundu-ramit/dozer_match/infra/redis"
+	rd "github.com/kundu-ramit/mercor_assignmentgnmentgnment/infra/redis"
 )
 
 type Cache interface {

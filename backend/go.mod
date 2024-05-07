@@ -1,4 +1,4 @@
-module github.com/kundu-ramit/dozer_match
+module github.com/kundu-ramit/mercor_assignment
 
 go 1.20
 
@@ -9,6 +9,8 @@ require (
 )
 
 require (
+	filippo.io/edwards25519 v1.1.0 // indirect
+	github.com/go-sql-driver/mysql v1.8.1 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/onsi/ginkgo v1.16.5 // indirect
 	github.com/onsi/gomega v1.18.1 // indirect
@@ -18,6 +20,7 @@ require (
 	github.com/ysmood/gson v0.7.3 // indirect
 	github.com/ysmood/leakless v0.8.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
+	gorm.io/driver/mysql v1.5.6 // indirect
 )
 
 require (
@@ -56,5 +59,5 @@ require (
 	golang.org/x/text v0.9.0 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/gorm v1.25.1
+	gorm.io/gorm v1.25.7
 )

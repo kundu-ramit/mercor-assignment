@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/kundu-ramit/dozer_match/domain/entity"
-	"github.com/kundu-ramit/dozer_match/service"
+	"github.com/kundu-ramit/mercor_assignmentgnmentgnment/domain/entity"
+	"github.com/kundu-ramit/mercor_assignmentgnmentgnment/service"
 )
 
 type ScraperController interface {
