@@ -67,7 +67,7 @@ func processSkill(inputData, inputID string, inputName string) error {
 	bToken := os.Getenv("GPT_KEY")
 	filename := "cmd/skills/vectormap/"
 
-	embedding, err := openai.GetEmbeddingVector(inputData, bToken)
+	embedding, err := openai.GetEmbeddingVector(inputData)
 	if err != nil {
 		panic(err)
 	}

@@ -43,7 +43,7 @@ func processMiscellanous(value, id string) error {
 	bToken := os.Getenv("GPT_KEY")
 	filename := "cmd/miscellanous/vectormap/"
 
-	embedding, err := openai.GetEmbeddingVector(value, bToken)
+	embedding, err := openai.GetEmbeddingVector(value)
 	if err != nil {
 		panic(err)
 	}

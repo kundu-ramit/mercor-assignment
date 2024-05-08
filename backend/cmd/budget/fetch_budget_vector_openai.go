@@ -40,10 +40,9 @@ func FetchBudgetVectorOpenAi() {
 }
 
 func processBudget(value, id string) error {
-	bToken := os.Getenv("GPT_KEY")
 	filename := "cmd/budget/vectormap/"
 
-	embedding, err := openai.GetEmbeddingVector(value, bToken)
+	embedding, err := openai.GetEmbeddingVector(value)
 	if err != nil {
 		panic(err)
 	}

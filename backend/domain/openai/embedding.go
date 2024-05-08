@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 )
 
 type EmbeddingResponse struct {
@@ -22,7 +23,19 @@ type EmbeddingResponse struct {
 	} `json:"usage"`
 }
 
-func GetEmbeddingVector(inputData string, bToken string) ([]float32, error) {
+type OpenAiProcessor interface {
+	GetEmbeddingVector(inputData string) ([]float32, error)
+}
+
+func NewOpenAiProcessor() openAiProcessor {
+	return openAiProcessor{}
+}
+
+type openAiProcessor struct {
+}
+
+func (oai openAiProcessor) GetEmbeddingVector(inputData string) ([]float32, error) {
+	bToken := os.Getenv("GPT_KEY")
 	url := "https://api.openai.com/v1/embeddings"
 
 	data := map[string]interface{}{

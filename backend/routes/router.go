@@ -15,7 +15,7 @@ func SetupRouter() *gin.Engine {
 	config.AllowAllOrigins = true
 	router.Use(cors.New(config))
 
-	scraperController := controllers.NewScraperController()
+	controller := controllers.NewQueryController()
 
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
@@ -23,17 +23,7 @@ func SetupRouter() *gin.Engine {
 		})
 	})
 
-	//find a specific scrape
-	router.GET("/scrape/:id", scraperController.Get)
-
-	//find the latest scrape
-	router.GET("/scrape", scraperController.Get)
-
-	//order a new scrape
-	router.POST("/scrape", scraperController.StartScrape)
-
-	//delete all scrape records
-	router.DELETE("/scrape", scraperController.Clear)
+	router.GET("/query/nlp", controller.ProcessNLPQuery)
 
 	return router
 }
