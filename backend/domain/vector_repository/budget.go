@@ -39,9 +39,12 @@ func (r budgetRepository) Add(ctx context.Context, data EmbeddingJSON) error {
 }
 
 func (r budgetRepository) Get(ctx context.Context, embedding []float32) ([]Response, error) {
-	query := fmt.Sprintf("select text,dot_product(vector, JSON_ARRAY_PACK('[%s]')) as score from budgets limit 3 order by score desc", strings.Trim(strings.Join(strings.Fields(fmt.Sprint(embedding)), ","), "[]"))
+	query := fmt.Sprintf("SELECT text, DOT_PRODUCT(vector, JSON_ARRAY_PACK('[%s]')) AS score FROM budgets  ORDER BY score DESC LIMIT 3", strings.Trim(strings.Join(strings.Fields(fmt.Sprint(embedding)), ","), "[]"))
+
+	fmt.Println(query)
 	rows, err := r.db.QueryContext(ctx, query)
 	if err != nil {
+		fmt.Println(err)
 		return nil, err
 	}
 	budgets := make([]Response, 0)

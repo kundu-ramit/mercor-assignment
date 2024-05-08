@@ -34,7 +34,7 @@ func (r miscellanousRepository) Add(ctx context.Context, data EmbeddingJSON) err
 }
 
 func (r miscellanousRepository) Get(ctx context.Context, embedding []float32) ([]Response, error) {
-	query := fmt.Sprintf("select text,dot_product(vector, JSON_ARRAY_PACK('[%s]')) as score from miscellanous limit 3 order by score desc", strings.Trim(strings.Join(strings.Fields(fmt.Sprint(embedding)), ","), "[]"))
+	query := fmt.Sprintf("select text,dot_product(vector, JSON_ARRAY_PACK('[%s]')) as score from miscellanous  order by score desc limit 3", strings.Trim(strings.Join(strings.Fields(fmt.Sprint(embedding)), ","), "[]"))
 	rows, err := r.db.QueryContext(ctx, query)
 	if err != nil {
 		return nil, err
