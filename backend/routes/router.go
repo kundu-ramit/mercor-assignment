@@ -25,5 +25,7 @@ func SetupRouter() *gin.Engine {
 
 	router.GET("/query/nlp", controller.ProcessNLPQuery)
 
+	router.GET("/query/order", controller.ProcessOrderedQuery)
+
 	return router
 }
