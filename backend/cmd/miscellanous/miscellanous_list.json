@@ -1,7 +1,7 @@
 [
     {
         "id":"Top University",
-        "value":"Person has graduated from a top University"
+        "value":"Person has graduated from a top University like Harvard, Stanford or IIT"
     },
     {
         "id":"Worked at small startups",
