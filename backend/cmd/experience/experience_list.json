@@ -1,0 +1,46 @@
+[
+    {
+        "id": "EXP 0",
+        "value": "Person has less than 1 year of experience"
+    },
+    {
+      "id": "EXP 1",
+      "value": "Person has 1 year to 2 years of experience"
+    },
+    {
+      "id": "EXP 2",
+      "value": "Person has 2 years to 3 years of experience"
+    },
+    {
+      "id": "EXP 3",
+      "value": "Person has 3 years to 4 years of experience"
+    },
+    {
+      "id": "EXP 4",
+      "value": "Person has 4 years to 5 years of experience"
+    },
+    {
+      "id": "EXP 5",
+      "value": "Person has 5 years to 6 years of experience"
+    },
+    {
+      "id": "EXP 6",
+      "value": "Person has 6 years to 7 years of experience"
+    },
+    {
+      "id": "EXP 7",
+      "value": "Person has 7 years to 8 years of experience"
+    },
+    {
+      "id": "EXP 8",
+      "value": "Person has 8 years to 9 years of experience"
+    },
+    {
+      "id": "EXP 9",
+      "value": "Person has 9 years to 10 years of experience"
+    },
+    {
+      "id": "EXP 10+",
+      "value": "Person has more than 10 years of experience"
+    }
+]

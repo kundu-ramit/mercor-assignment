@@ -1,0 +1,82 @@
+[
+    {
+      "id": "FT(2000)",
+      "value": "Full time (greater than 40 hours) available at below 2000$/month"
+    },
+    {
+      "id": "FT(3000)",
+      "value": "Full time (greater than 40 hours) available at below 3000$/month"
+    },
+    {
+      "id": "FT(4000)",
+      "value": "Full time (greater than 40 hours) available at below 4000$/month"
+    },
+    {
+      "id": "FT(5000)",
+      "value": "Full time (greater than 40 hours) available at below 5000$/month"
+    },
+    {
+      "id": "FT(6000)",
+      "value": "Full time (greater than 40 hours) available at below 6000$/month"
+    },
+    {
+      "id": "FT(7000)",
+      "value": "Full time (greater than 40 hours) available at below 7000$/month"
+    },
+    {
+      "id": "FT(8000)",
+      "value": "Full time (greater than 40 hours) available at below 8000$/month"
+    },
+    {
+      "id": "FT(9000)",
+      "value": "Full time (greater than 40 hours) available at below 9000$/month"
+    },
+    {
+      "id": "FT(10000)",
+      "value": "Full time (greater than 40 hours) available at below 10000$/month"
+    },
+    {
+      "id": "FT(10000)+",
+      "value": "Full time (greater than 40 hours) available at above 10000$/month"
+    },
+    {
+      "id": "PT(2000)",
+      "value": "Part time (less than 40 hours) available at below 2000$/month"
+    },
+    {
+      "id": "PT(3000)",
+      "value": "Part time (less than 40 hours) available at below 3000$/month"
+    },
+    {
+      "id": "PT(4000)",
+      "value": "Part time (less than 40 hours) available at below 4000$/month"
+    },
+    {
+      "id": "PT(5000)",
+      "value": "Part time (less than 40 hours) available at below 5000$/month"
+    },
+    {
+      "id": "PT(6000)",
+      "value": "Part time (less than 40 hours) available at below 6000$/month"
+    },
+    {
+      "id": "PT(7000)",
+      "value": "Part time (less than 40 hours) available at below 7000$/month"
+    },
+    {
+      "id": "PT(8000)",
+      "value": "Part time (less than 40 hours) available at below 8000$/month"
+    },
+    {
+      "id": "PT(9000)",
+      "value": "Part time (less than 40 hours) available at below 9000$/month"
+    },
+    {
+      "id": "PT(10000)",
+      "value": "Part time (less than 40 hours) available at below 10000$/month"
+    },
+    {
+      "id": "PT(10000)+",
+      "value": "Part time (less than 40 hours) available at above 10000$/month"
+    }
+  ]

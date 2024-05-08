@@ -1,0 +1,14 @@
+[
+    {
+        "id":"Top University",
+        "value":"Person has graduated from a top University"
+    },
+    {
+        "id":"Worked at small startups",
+        "value":"Person has Worked at small startups"
+    },
+    {
+        "id":"Worked at large MNCs",
+        "value":"Person has Worked at large MNCs like Apple, Google , Amazon , Deloitte etc"
+    }
+]
