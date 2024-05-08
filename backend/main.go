@@ -42,6 +42,8 @@ func applySeed(arg string) {
 		budget.FetchBudgetVectorOpenAi()
 	case "addbudgetvector":
 		budget.AddBudgetVectors()
+	case "fetchexperiencevector":
+		experience.FetchExperienceVectorOpenAi()
 	case "addexperiencevector":
 		experience.AddExperienceVectors()
 	case "addmiscellanousvector":
