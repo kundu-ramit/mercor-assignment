@@ -35,3 +35,19 @@ func AppendJSONToFile(data vectorrepository.EmbeddingJSON, filenameprefix string
 
 	return nil
 }
+
+func ReadJSONFile(filePath string) (vectorrepository.EmbeddingJSON, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return vectorrepository.EmbeddingJSON{}, err
+	}
+	defer file.Close()
+
+	var data vectorrepository.EmbeddingJSON
+	err = json.NewDecoder(file).Decode(&data)
+	if err != nil {
+		return vectorrepository.EmbeddingJSON{}, err
+	}
+
+	return data, nil
+}

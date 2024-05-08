@@ -48,9 +48,9 @@ func processExperience(value, id string) error {
 		panic(err)
 	}
 
-	embeddingJSON := helper.CreateEmbeddingJSON(id, "", embedding)
+	embeddingJSON := helper.CreateEmbeddingJSON(id, id, embedding)
 
-	err = helper.AppendJSONToFile(embeddingJSON, filename, "")
+	err = helper.AppendJSONToFile(embeddingJSON, filename, id)
 	if err != nil {
 		return err
 	}

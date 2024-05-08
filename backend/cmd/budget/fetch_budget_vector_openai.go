@@ -35,7 +35,7 @@ func FetchBudgetVectorOpenAi() {
 			fmt.Printf("Error processing skill '%s': %v\n", budget.ID, err)
 			continue
 		}
-		fmt.Printf("Skill '%s' processed successfully\n", budget.ID)
+		fmt.Printf("Skill '%s' %s processed successfully\n", budget.ID, budget.Value)
 	}
 }
 
@@ -47,10 +47,9 @@ func processBudget(value, id string) error {
 	if err != nil {
 		panic(err)
 	}
+	embeddingJSON := helper.CreateEmbeddingJSON(id, id, embedding)
 
-	embeddingJSON := helper.CreateEmbeddingJSON(id, "", embedding)
-
-	err = helper.AppendJSONToFile(embeddingJSON, filename, "")
+	err = helper.AppendJSONToFile(embeddingJSON, filename, id)
 	if err != nil {
 		return err
 	}

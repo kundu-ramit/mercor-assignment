@@ -4,7 +4,11 @@ import (
 	"log"
 	"os"
 
+	"github.com/kundu-ramit/mercor_assignment/cmd/budget"
+	"github.com/kundu-ramit/mercor_assignment/cmd/experience"
+	"github.com/kundu-ramit/mercor_assignment/cmd/miscellanous"
 	"github.com/kundu-ramit/mercor_assignment/cmd/skills"
+	"github.com/kundu-ramit/mercor_assignment/infra/database"
 )
 
 func main() {
@@ -26,14 +30,22 @@ func main() {
 }
 
 func applySeed(arg string) {
-	// db := database.Initialize()
+	db := database.Initialize()
 	switch arg {
 	case "fetchskills":
-		//skills.FetchSkills(db)
+		skills.FetchSkills(db)
 	case "fetchskillvector":
 		skills.FetchSkillVectorOpenAi()
 	case "addskillvector":
 		skills.AddSkillVectors()
+	case "fetchbudgetvector":
+		budget.FetchBudgetVectorOpenAi()
+	case "addbudgetvector":
+		budget.AddBudgetVectors()
+	case "addexperiencevector":
+		experience.AddExperienceVectors()
+	case "addmiscellanousvector":
+		miscellanous.AddMiscellanousVectors()
 	}
 
 }
