@@ -10,7 +10,7 @@ import (
 )
 
 func Initialize() *gorm.DB {
-	dsn := os.Getenv("DB_DSN")
+	dsn := os.Getenv("MYSQL_DB_DSN")
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)

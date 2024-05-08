@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/kundu-ramit/mercor_assignment/cmd/skills"
-	"github.com/kundu-ramit/mercor_assignment/infra/database"
 )
 
 func main() {
@@ -27,14 +26,14 @@ func main() {
 }
 
 func applySeed(arg string) {
-
+	// db := database.Initialize()
 	switch arg {
 	case "fetchskills":
-		db := database.Initialize()
-		//vectordb := vectordatabase.Initialize()
-		skills.FetchSkills(db)
+		//skills.FetchSkills(db)
 	case "fetchskillvector":
 		skills.FetchSkillVectorOpenAi()
+	case "addskillvector":
+		skills.AddSkillVectors()
 	}
 
 }

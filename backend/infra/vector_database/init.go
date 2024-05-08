@@ -1,17 +1,15 @@
 package vectordatabase
 
 import (
+	"database/sql"
 	"fmt"
-	"os"
 
 	_ "github.com/go-sql-driver/mysql"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
 )
 
-func Initialize() *gorm.DB {
-	dsn := os.Getenv("VECTOR_DB_DSN")
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+func Initialize() *sql.DB {
+	dsn := "Ramit:fplOrZenc6BWjfmgiGKolM7OxYoMVFgr@tcp(svc-3482219c-a389-4079-b18b-d50662524e8a-shared-dml.aws-virginia-6.svc.singlestore.com:3333)/database_d5bb3?tls=skip-verify"
+	db, err := sql.Open("mysql", dsn)
 	if err != nil {
 		panic(err)
 	}

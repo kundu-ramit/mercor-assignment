@@ -1,10 +1,12 @@
 package skills
 
 import (
+	"context"
 	"encoding/json"
 	"log"
 	"os"
 
+	mysqlrepository "github.com/kundu-ramit/mercor_assignment/domain/mysql_repository"
 	"gorm.io/gorm"
 )
 
@@ -18,24 +20,18 @@ type Skill struct {
 func FetchSkills(db *gorm.DB) {
 
 	// Retrieve all records from the Skills table
-	var skills []Skill
-	if err := db.Table("Skills").Select("skillId, skillName").Find(&skills).Error; err != nil {
+	skills := make([]Skill, 0)
+	dbRes, err := mysqlrepository.NewSkillRepository().FetchAll(context.Background())
+	if err != nil {
 		panic(err)
 	}
 
-	// Create an array of map for skills
-	var skillList []map[string]string
-	for _, skill := range skills {
-		skillMap := map[string]string{
-			"skillId":    skill.SkillID,
-			"skillName":  skill.SkillName,
-			"customText": `Person is skilled in ` + skill.SkillName,
-		}
-		skillList = append(skillList, skillMap)
+	for i := 0; i < len(dbRes); i++ {
+		skills = append(skills, Skill{dbRes[i].SkillID, dbRes[i].SkillName, "Person is skilled in " + dbRes[i].SkillName})
 	}
 
 	// Marshal the skill list to JSON
-	skillJSON, err := json.Marshal(skillList)
+	skillJSON, err := json.Marshal(skills)
 	if err != nil {
 		panic(err)
 	}
