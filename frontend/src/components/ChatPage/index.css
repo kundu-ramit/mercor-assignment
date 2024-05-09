@@ -1,0 +1,20 @@
+.outercard {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ffffff;
+}
+
+.gradientBackground {
+    /* Fallback color */
+    background-color: #3498db; /* Blue */
+  
+    /* Gradient definition */
+    background-image: linear-gradient(to bottom right, #cce4ff, #ffddfc); /* Blue to white */
+  
+    /* Additional styles */
+    /* Adjust height and other styles as needed */
+    min-height: 100vh;
+  }

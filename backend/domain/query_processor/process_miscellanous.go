@@ -16,11 +16,11 @@ func ProcessMiscellanous(experiences []vectorrepository.Response) Result {
 	})
 
 	for _, experience := range experiences {
-		// If score is less than 0.3, ignore it
-		if experience.Score < 0.3 {
+		// If score is less than 0.35, ignore it
+		if experience.Score < 0.35 {
 			continue
 		}
-		// If score is greater than or equal to 0.3, set IsPresent to true
+		// If score is greater than or equal to 0.35, set IsPresent to true
 		result.IsPresent = true
 		result.Responses = append(result.Responses, experience)
 	}
