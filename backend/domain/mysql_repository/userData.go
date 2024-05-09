@@ -221,8 +221,8 @@ func getUserSkillDataWithReplacements(ctx context.Context, data []UserSkillData)
 
 	for i := range data {
 		// Replace skill IDs with skills
-		for j, skillId := range data[i].SkillIds {
-			data[i].Skills[j] = m[skillId]
+		for _, skillId := range data[i].SkillIds {
+			data[i].Skills = append(data[i].Skills, m[skillId])
 		}
 		// Replace experience level ID with description
 		data[i].TotalWorkExperienceDiv = getExperienceDescription(data[i].TotalWorkExperience)
