@@ -7,7 +7,6 @@ import (
 	"os"
 
 	mysqlrepository "github.com/kundu-ramit/mercor_assignment/domain/mysql_repository"
-	"gorm.io/gorm"
 )
 
 // Skill model to map to Skills table
@@ -17,7 +16,7 @@ type Skill struct {
 	CustomText string `gorm:"column:customText"`
 }
 
-func FetchSkills(db *gorm.DB) {
+func FetchSkills() {
 
 	// Retrieve all records from the Skills table
 	skills := make([]Skill, 0)

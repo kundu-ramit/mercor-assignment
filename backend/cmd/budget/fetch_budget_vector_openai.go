@@ -42,7 +42,7 @@ func FetchBudgetVectorOpenAi() {
 func processBudget(value, id string) error {
 	filename := "cmd/budget/vectormap/"
 
-	embedding, err := openai.GetEmbeddingVector(value)
+	embedding, err := openai.NewOpenAiProcessor().GetEmbeddingVector(value)
 	if err != nil {
 		panic(err)
 	}

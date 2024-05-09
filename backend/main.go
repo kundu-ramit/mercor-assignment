@@ -4,7 +4,10 @@ import (
 	"log"
 	"os"
 
+	"github.com/kundu-ramit/mercor_assignment/cmd/budget"
 	"github.com/kundu-ramit/mercor_assignment/cmd/experience"
+	"github.com/kundu-ramit/mercor_assignment/cmd/miscellanous"
+	"github.com/kundu-ramit/mercor_assignment/cmd/skills"
 	"github.com/kundu-ramit/mercor_assignment/infra/database"
 	vectordatabase "github.com/kundu-ramit/mercor_assignment/infra/vector_database"
 	"github.com/kundu-ramit/mercor_assignment/routes"
@@ -32,22 +35,22 @@ func main() {
 
 func applySeed(arg string) {
 	switch arg {
-	// 	case "fetchskills":
-	// 		skills.FetchSkills(db)
-	// 	case "fetchskillvector":
-	// 		skills.FetchSkillVectorOpenAi()
-	// 	case "addskillvector":
-	// 		skills.AddSkillVectors()
-	// 	case "fetchbudgetvector":
-	// 		budget.FetchBudgetVectorOpenAi()
-	// 	case "addbudgetvector":
-	// 		budget.AddBudgetVectors()
+	case "fetchskills":
+		skills.FetchSkills()
+	case "fetchskillvector":
+		skills.FetchSkillVectorOpenAi()
+	case "addskillvector":
+		skills.AddSkillVectors()
+	case "fetchbudgetvector":
+		budget.FetchBudgetVectorOpenAi()
+	case "addbudgetvector":
+		budget.AddBudgetVectors()
 	case "fetchexperiencevector":
 		experience.FetchExperienceVectorOpenAi()
 	case "addexperiencevector":
 		experience.AddExperienceVectors()
-		// 	case "addmiscellanousvector":
-		// 		miscellanous.AddMiscellanousVectors()
+	case "addmiscellanousvector":
+		miscellanous.AddMiscellanousVectors()
 	}
 
 }

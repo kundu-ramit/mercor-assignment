@@ -1,14 +1,14 @@
 [
     {
-        "id":"Top University",
+        "id":"TopUniversity",
         "value":"Person has graduated from a top University like Harvard, Stanford or IIT"
     },
     {
-        "id":"Worked at small startups",
-        "value":"Person has Worked at small startups"
+        "id":"STARTUP",
+        "value":"Person has experience working at at small startups"
     },
     {
-        "id":"Worked at large MNCs",
-        "value":"Person has Worked at large MNCs like Apple, Google , Amazon , Deloitte etc"
+        "id":"MNC",
+        "value":"Person has experience working at large MNCs like Apple, Google , Amazon , Deloitte etc"
     }
 ]
