@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from "antd";
 import './index.css'
 import Intro from '../Intro';
 import ChatWindow from '../ChatWindow';
@@ -15,9 +14,15 @@ function ChatPage() {
   }, []);
 
   async function handleSend(text) {
-    chats.push(<ChatBubble message={text} sender={"user"}/>)
+    chats.push(<ChatBubble message={text}/>)
     setChats([...chats])
-    await extractUsersForQuery(text)
+    const rankedUsers = await extractUsersForQuery(text)
+    console.log(rankedUsers)
+    for(var i=0;i<rankedUsers.length;i++)
+      {
+        chats.push(<ChatBubble message={JSON.stringify(rankedUsers[i])}/>)
+        setChats([...chats])
+      }
   }
 
   return (

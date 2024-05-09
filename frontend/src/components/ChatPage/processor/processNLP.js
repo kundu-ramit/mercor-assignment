@@ -1,5 +1,6 @@
 import { fetchUserData } from '../api/fetchUsers';
 import {decodeNLP} from '../api/decodeNLP'
+import {getRankedList} from '../ranker/calculateRank'
 async function processNLPQuery(query) {
   try {
     // First, decode the NLP query
@@ -12,26 +13,25 @@ async function processNLPQuery(query) {
     const miscellanous = response.Miscellanous.Responses;
 
     // Processing Skills
-    const sortedSkills = skills.slice(0, 3).map(skill => skill.Text);
+    const sortedSkills = skills.slice(0, 3);
     const isSkillPresent = response.Skills.IsPresent;
 
     // Processing Budget
-    const sortedBudget = budget[0].Text;
+    const sortedBudget = budget[0];
     const isBudgetPresent = response.Budget.IsPresent;
 
     // Processing Experience
-    const sortedExperience = experience.length > 0 ? experience[0].Text : null;
+    const sortedExperience = experience.length > 0 ? experience[0] : null;
     const isExperiencePresent = response.Experience.IsPresent;
 
     // Processing Miscellanous
-    const sortedMiscellanous = miscellanous.map(item => item.Text);
     const isMiscellanousPresent = response.Miscellanous.IsPresent;
-
+    
     return {
       Skills: sortedSkills,
       Budget: sortedBudget,
       Experience: sortedExperience,
-      Miscellanous: sortedMiscellanous,
+      Miscellanous: miscellanous,
       IsSkillPresent: isSkillPresent,
       IsBudgetPresent: isBudgetPresent,
       IsExperiencePresent: isExperiencePresent,
@@ -44,8 +44,9 @@ async function processNLPQuery(query) {
 }
 
 export async function extractUsersForQuery(query){
-   var queryData =  processNLPQuery(query);
+   var queryData =  await processNLPQuery(query);
 
   var data =  await fetchUserData(queryData.Skills)
-    console.log(data)
+  var rankedUsers = await getRankedList(data, queryData)
+  return rankedUsers;
 }
