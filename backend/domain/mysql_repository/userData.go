@@ -26,8 +26,9 @@ type UserSkillData struct {
 	FullTimeAvailability   int      `json:"fullTimeAvailability"`
 	PartTime               bool     `json:"partTime"`
 	PartTimeAvailability   int      `json:"partTimeAvailability"`
-	SkillIds               []string `json:"skillIds"`
-	TotalWorkExperienceDiv string   `json:"totalworkexperiencediv"`
+	Skills                 []Skill  `json:"skills"`
+	SkillIds               []string
+	TotalWorkExperienceDiv string `json:"totalworkexperiencediv"`
 }
 
 type MercorUser struct {
@@ -213,24 +214,20 @@ func getUserSkillDataWithReplacements(ctx context.Context, data []UserSkillData)
 
 	skillIds, _ := NewSkillRepository().FetchAll(ctx)
 
+	m := make(map[string]Skill)
+	for i := range skillIds {
+		m[skillIds[i].SkillID] = skillIds[i]
+	}
+
 	for i := range data {
-		// Replace skill IDs with skill names
-		for j, skillID := range data[i].SkillIds {
-			data[i].SkillIds[j] = getSkillName(skillID, skillIds)
+		// Replace skill IDs with skills
+		for j, skillId := range data[i].SkillIds {
+			data[i].Skills[j] = m[skillId]
 		}
 		// Replace experience level ID with description
 		data[i].TotalWorkExperienceDiv = getExperienceDescription(data[i].TotalWorkExperience)
 	}
 	return data, nil
-}
-
-func getSkillName(skillId string, skillIds []Skill) string {
-	for i := range skillIds {
-		if skillIds[i].SkillID == skillId {
-			return skillIds[i].SkillName
-		}
-	}
-	return skillId
 }
 
 func getExperienceDescription(experience int) string {
