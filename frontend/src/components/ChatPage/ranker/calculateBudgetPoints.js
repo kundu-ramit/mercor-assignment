@@ -4,7 +4,7 @@ const WITHIN_BUDGET_POINTS = 700;
 export function calculateBudgetPoints(user, requirements, tags) {
     let points=0;
     if (!requirements.IsBudgetPresent) 
-        return;
+        return 0;
         const budgetRegex = /([0-9]+)\s*\+?\)/;
         const budgetMatch = requirements.Budget.Text.match(budgetRegex);
         if (budgetMatch) {

@@ -1,14 +1,12 @@
 import { calculateBudgetPoints } from "./calculateBudgetPoints";
 import { calculateMiscellaneousPoints } from "./calculateMiscPoints";
 import { calculateSkillPoints } from "./calculateSkillPoints";
-import { calculateGithubPoints } from "./calculateGithubPoints";
+// import { calculateGithubPoints } from "./calculateGithubPoints";
 
 async function calculateRank(user, requirements) {
     let points = 0;
     let tags = [];
-    console.log("POINTS",user,requirements,tags,points)
     points += calculateSkillPoints(user,requirements, tags);
-    console.log("POINTS1",points)
     points += calculateBudgetPoints(user, requirements, tags);
     points += calculateMiscellaneousPoints(user, requirements, tags);
     //points += await calculateGithubPoints(user.ocrGithubUsername, tags);
