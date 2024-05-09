@@ -1,14 +1,14 @@
 [
     {
-        "id": "EXP BEGINNER",
-        "value": "Person has less than 3 year of experience"
+        "id": "BEG",
+        "value": "Person is a beginner and has less than 2 year of experience"
     },
     {
-      "id": "EXP MEDIUM",
-      "value": "Person has 3 to 8 years of experience"
+      "id": "INT",
+      "value": "Person has between 3 to 8 years of experience"
     },
     {
-      "id": "EXP EXPERT",
-      "value": "Person has more than 8 years of experience"
+      "id": "EXP",
+      "value": "Person is a expert and highly experienced candidate and has more than 8 years of experience"
     }
 ]

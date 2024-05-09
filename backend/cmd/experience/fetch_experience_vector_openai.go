@@ -40,10 +40,9 @@ func FetchExperienceVectorOpenAi() {
 }
 
 func processExperience(value, id string) error {
-	bToken := os.Getenv("GPT_KEY")
 	filename := "cmd/experience/vectormap/"
 
-	embedding, err := openai.GetEmbeddingVector(value)
+	embedding, err := openai.NewOpenAiProcessor().GetEmbeddingVector(value)
 	if err != nil {
 		panic(err)
 	}

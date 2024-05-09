@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/kundu-ramit/mercor_assignment/cmd/experience"
 	"github.com/kundu-ramit/mercor_assignment/infra/database"
 	vectordatabase "github.com/kundu-ramit/mercor_assignment/infra/vector_database"
 	"github.com/kundu-ramit/mercor_assignment/routes"
@@ -23,34 +24,33 @@ func main() {
 	case "server":
 		startServer()
 	case "seed":
-		//applySeed(args[1])
+		applySeed(args[1])
 	default:
 		log.Fatal("Invalid command:", args[0])
 	}
 }
 
-// func applySeed(arg string) {
-// 	db := database.Initialize()
-// 	switch arg {
-// 	case "fetchskills":
-// 		skills.FetchSkills(db)
-// 	case "fetchskillvector":
-// 		skills.FetchSkillVectorOpenAi()
-// 	case "addskillvector":
-// 		skills.AddSkillVectors()
-// 	case "fetchbudgetvector":
-// 		budget.FetchBudgetVectorOpenAi()
-// 	case "addbudgetvector":
-// 		budget.AddBudgetVectors()
-// 	case "fetchexperiencevector":
-// 		experience.FetchExperienceVectorOpenAi()
-// 	case "addexperiencevector":
-// 		experience.AddExperienceVectors()
-// 	case "addmiscellanousvector":
-// 		miscellanous.AddMiscellanousVectors()
-// 	}
+func applySeed(arg string) {
+	switch arg {
+	// 	case "fetchskills":
+	// 		skills.FetchSkills(db)
+	// 	case "fetchskillvector":
+	// 		skills.FetchSkillVectorOpenAi()
+	// 	case "addskillvector":
+	// 		skills.AddSkillVectors()
+	// 	case "fetchbudgetvector":
+	// 		budget.FetchBudgetVectorOpenAi()
+	// 	case "addbudgetvector":
+	// 		budget.AddBudgetVectors()
+	case "fetchexperiencevector":
+		experience.FetchExperienceVectorOpenAi()
+	case "addexperiencevector":
+		experience.AddExperienceVectors()
+		// 	case "addmiscellanousvector":
+		// 		miscellanous.AddMiscellanousVectors()
+	}
 
-// }
+}
 
 func startServer() {
 
