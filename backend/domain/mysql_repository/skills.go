@@ -8,9 +8,9 @@ import (
 )
 
 type Skill struct {
-	SkillID    string
-	SkillName  string
-	SkillValue string
+	SkillID    string `json:"skillId"`
+	SkillName  string `json:"skillName"`
+	SkillValue string `json:"skillValue"`
 }
 
 type SkillRepository interface {
@@ -29,10 +29,26 @@ func NewSkillRepository() SkillRepository {
 
 func (r *skillRepository) FetchAll(ctx context.Context) ([]Skill, error) {
 	var skills []Skill
-	query := "SELECT * FROM Skills"
-	err := r.db.Raw(query).Scan(&skills).Error
+	query := "SELECT skillId, skillName, skillValue FROM Skills"
+
+	// Execute raw SQL query with context
+	rows, err := r.db.WithContext(ctx).Raw(query).Rows()
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var skill Skill
+		if err := rows.Scan(&skill.SkillID, &skill.SkillName, &skill.SkillValue); err != nil {
+			return nil, err
+		}
+		skills = append(skills, skill)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
 	return skills, nil
 }

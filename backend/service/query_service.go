@@ -38,7 +38,7 @@ func (q queryService) FetchOrdered(ctx context.Context, skills []string, budget 
 	if err != nil {
 		return nil, err
 	}
-	res, err := q.repo.GetUserData(getUserIDsFromUserSkillMatches(userIds), userIds)
+	res, err := q.repo.GetUserData(ctx, getUserIDsFromUserSkillMatches(userIds), userIds)
 	if err != nil {
 		return nil, err
 	}

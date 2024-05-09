@@ -69,7 +69,7 @@ type UserDataResponse struct {
 }
 
 type UserDataRepository interface {
-	GetUserData(userIDs []string, userDataRequests []UserSkillMatch) ([]UserSkillData, error)
+	GetUserData(ctx context.Context, userIDs []string, userDataRequests []UserSkillMatch) ([]UserSkillData, error)
 }
 
 type userDataRepository struct {
@@ -82,7 +82,7 @@ func NewUserDataRepository() UserDataRepository {
 	}
 }
 
-func (u userDataRepository) GetUserData(userIDs []string, userDataRequests []UserSkillMatch) ([]UserSkillData, error) {
+func (u userDataRepository) GetUserData(ctx context.Context, userIDs []string, userDataRequests []UserSkillMatch) ([]UserSkillData, error) {
 	// Fetch MercorUser and UserResume data in a single query
 	var mercorUsers []MercorUser
 	var userResumes []UserResume
@@ -140,7 +140,7 @@ func (u userDataRepository) GetUserData(userIDs []string, userDataRequests []Use
 		userSkillData = append(userSkillData, userData)
 	}
 
-	return getUserSkillDataWithReplacements(userSkillData)
+	return getUserSkillDataWithReplacements(ctx, userSkillData)
 }
 
 // Helper functions
@@ -209,9 +209,9 @@ func getSchools(resumeID string, educations []Education) []string {
 	return result
 }
 
-func getUserSkillDataWithReplacements(data []UserSkillData) ([]UserSkillData, error) {
+func getUserSkillDataWithReplacements(ctx context.Context, data []UserSkillData) ([]UserSkillData, error) {
 
-	skillIds, _ := NewSkillRepository().FetchAll(context.Background())
+	skillIds, _ := NewSkillRepository().FetchAll(ctx)
 
 	for i := range data {
 		// Replace skill IDs with skill names
