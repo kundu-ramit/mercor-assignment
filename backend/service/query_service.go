@@ -9,7 +9,7 @@ import (
 
 type QueryService interface {
 	Fetch(ctx context.Context, text string) (queryprocessor.ProcessorResponse, error)
-	FetchOrdered(ctx context.Context, skills []string, budget int, experience string) ([]mysqlrepository.UserSkillMatch, error)
+	FetchOrdered(ctx context.Context, skills []string, budget int, experience string) ([]mysqlrepository.UserSkillData, error)
 }
 
 type queryService struct {
@@ -33,10 +33,23 @@ func (q queryService) Fetch(ctx context.Context, text string) (queryprocessor.Pr
 	}
 	return res, nil
 }
-func (q queryService) FetchOrdered(ctx context.Context, skills []string, budget int, experience string) ([]mysqlrepository.UserSkillMatch, error) {
+func (q queryService) FetchOrdered(ctx context.Context, skills []string, budget int, experience string) ([]mysqlrepository.UserSkillData, error) {
 	userIds, err := q.mercorUserSkillsRepo.FetchUserSkillMatches(ctx, skills)
 	if err != nil {
 		return nil, err
 	}
-	return userIds, nil
+	res, err := q.repo.GetUserData(getUserIDsFromUserSkillMatches(userIds), userIds)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}
+
+func getUserIDsFromUserSkillMatches(matches []mysqlrepository.UserSkillMatch) []string {
+	userIDs := make([]string, len(matches))
+	for i, match := range matches {
+		userIDs[i] = match.UserID
+	}
+	return userIDs
 }
