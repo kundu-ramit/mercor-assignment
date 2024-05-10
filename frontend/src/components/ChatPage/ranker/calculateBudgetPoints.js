@@ -9,6 +9,7 @@ export function calculateBudgetPoints(user, requirements, tags) {
         const budgetMatch = requirements.Budget.Text.match(budgetRegex);
         if (budgetMatch) {
             const budget = parseInt(budgetMatch[1]);
+
             const fullTimeBudget = user.fullTimeSalaryCurrency === "USD" ? parseFloat(user.fullTimeSalary) : 0;
             const partTimeBudget = user.partTimeSalaryCurrency === "USD" ? parseFloat(user.partTimeSalary) : 0;
 

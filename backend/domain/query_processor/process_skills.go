@@ -9,7 +9,7 @@ import (
 // ProcessExperience processes the experiences based on given items.
 func ProcessSkills(experiences []vectorrepository.Response) Result {
 	var optimScore float32 = 0.3
-	var topScoreMin float32 = 0.45
+	var topScoreMin float32 = 0.4
 	var result Result
 
 	// Sort experiences by score in descending order

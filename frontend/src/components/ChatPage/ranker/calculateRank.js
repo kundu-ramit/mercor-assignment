@@ -9,6 +9,7 @@ async function calculateRank(user, requirements) {
     points += calculateSkillPoints(user,requirements, tags);
     points += calculateBudgetPoints(user, requirements, tags);
     points += calculateMiscellaneousPoints(user, requirements, tags);
+    console.log(user,points)
     //points += await calculateGithubPoints(user.ocrGithubUsername, tags);
 
     return { "userId": user.userId,"rank": points,"tags" : tags };
@@ -19,7 +20,6 @@ export async function getRankedList(users,requirements) {
 
     for(var i=0;i<users.length;i++)
     rankArray.push(await calculateRank(users[i],requirements))
-    console.log("CP:AS")
     rankArray.sort((a, b) => {
         return b.rank - a.rank;
     });

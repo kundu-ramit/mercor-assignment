@@ -4,6 +4,7 @@ import Intro from '../Intro';
 import ChatWindow from '../ChatWindow';
 import InputBox from '../InputBox';
 import ChatBubble from '../ChatBubble';
+import ChatBubbleBot from '../ChatBubbleBot';
 import { extractUsersForQuery } from "./processor/processNLP.js";
 
 function ChatPage() {
@@ -17,10 +18,9 @@ function ChatPage() {
     chats.push(<ChatBubble message={text}/>)
     setChats([...chats])
     const rankedUsers = await extractUsersForQuery(text)
-    console.log(rankedUsers)
     for(var i=0;i<rankedUsers.length;i++)
       {
-        chats.push(<ChatBubble message={JSON.stringify(rankedUsers[i])}/>)
+        chats.push(<ChatBubbleBot message={JSON.stringify(rankedUsers[i].tags)}/>)
         setChats([...chats])
       }
   }
