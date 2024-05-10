@@ -29,12 +29,21 @@ function ChatPage() {
     }
 
     const rankedUsers = await extractUsersForQuery(queryData)
-    for(var i=0;i<rankedUsers.length;i++)
+    pushToChat(queryData,text, rankedUsers,0)
+      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue} userList/>)
+      setChats([...chats])
+  }
+
+  function pushToChat(queryData,text, rankedUsers, startIndex)
+  {
+    if(startIndex+3>rankedUsers.length)
+      return;
+    for(var i=startIndex;i<startIndex+3;i++)
       {
         chats.push(generateUserCard(rankedUsers[i]))
         setChats([...chats])
       }
-      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue}/>)
+      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue} rankedUsers={rankedUsers} startIndex={startIndex} pushToChat={pushToChat}/>)
       setChats([...chats])
   }
 

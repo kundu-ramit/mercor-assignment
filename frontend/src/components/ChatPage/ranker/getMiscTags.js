@@ -4,36 +4,49 @@ import eliteSchools from './data/elite_schools.json'
 import mncList from './data/mnc_list.json'
 
 export function getMiscTags(companiesWorkedAt, schools, tags, miscValues) {
+    const miscValueList = miscValues.map(val => val.Text)
+    const miscMap = {}
+    for(var i in miscValueList)
+        miscMap[miscValueList[i].Text] = miscValueList[i].Score
     var points=0;
-    if(miscValues.includes("TopUniversity"))
+    if(miscValueList.includes("TopUniversity"))
     {
-    for(var i=0;i<schools.length;i++)
-    {
-        if(eliteSchools.includes(schools[i]) ){
-            tags.push("TopUniversity")
-            points+=500
-            break;
-        }
-    }
-}
-if(miscValues.includes("MNC"))
-    {
-    for(i=0;i<companiesWorkedAt.length;i++)
+        for(var i=0;i<schools.length;i++)
         {
-            if(mncList.includes(companiesWorkedAt[i])){
-                points+=500
-                tags.push("MNC")
+            if(eliteSchools.includes(schools[i]) ){
+                tags.push("TopUniversity")
+                if(miscMap["TopUniversity"]>0.5)
+                points+=2000
+            else 
+            points+=400
                 break;
             }
         }
     }
+    if(miscValueList.includes("MNC"))
+        {
+        for(i=0;i<companiesWorkedAt.length;i++)
+            {
+                if(mncList.includes(companiesWorkedAt[i])){
+                    if(miscMap["MNC"]>0.5)
+                        points+=2000
+                    else 
+                    points+=400
+                    tags.push("MNC")
+                    break;
+                }
+            }
+        }
 
-    if(miscValues.includes("STARTUP"))
+    if(miscValueList.includes("STARTUP"))
         {
         for(i=0;i<companiesWorkedAt.length;i++)
             {
                 if(!mncList.includes(companiesWorkedAt[i])){
-                    points+=500
+                    if(miscMap["STARTUP"]>0.5)
+                        points+=2000
+                    else 
+                    points+=400
                     tags.push("STARTUP")
                     break;
                 }

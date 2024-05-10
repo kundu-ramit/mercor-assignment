@@ -5,7 +5,7 @@ async function mockGithubPoints(ocrGithubUsername, tags) {
 
     // If the number of commits made in the last year is more than 20, return 100 points, otherwise return 0 points
     if (commitsLastYear > 20) {
-        tags.push('ACTIVE CONTRIBUTOR (Mock)')
+        tags.push('ACTIVE CONTRIBUTOR')
         return 100;
     } else {
         return 0;

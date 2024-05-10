@@ -29,9 +29,6 @@ export async function getRankedList(users,requirements) {
        userHash[users[i].userId] = users[i];
     }
 
-    if(rankArray.length>3)
-    rankArray = rankArray.slice(0, 3);
-
     var result = []
 
     for(i=0;i<rankArray.length;i++)

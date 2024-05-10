@@ -23,7 +23,7 @@ func ProcessBudget(responses []vectorrepository.Response) Result {
 
 	for _, response := range responses {
 		// If score is less than 0.3, ignore it
-		if response.Score < 0.3 {
+		if response.Score < 0.4 {
 			continue
 		}
 		// If score is greater than or equal to 0.3, set IsPresent to true
