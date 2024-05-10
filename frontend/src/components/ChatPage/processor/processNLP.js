@@ -1,7 +1,7 @@
 import { fetchUserData } from '../api/fetchUsers';
 import {decodeNLP} from '../api/decodeNLP'
 import {getRankedList} from '../ranker/calculateRank'
-async function processNLPQuery(query) {
+export async function processNLPQuery(query) {
   try {
     // First, decode the NLP query
     const response = await decodeNLP(query);
@@ -43,9 +43,7 @@ async function processNLPQuery(query) {
   }
 }
 
-export async function extractUsersForQuery(query){
-   var queryData =  await processNLPQuery(query);
-
+export async function extractUsersForQuery(queryData){
   var data =  await fetchUserData(queryData.Skills)
   var rankedUsers = await getRankedList(data, queryData)
   return rankedUsers;

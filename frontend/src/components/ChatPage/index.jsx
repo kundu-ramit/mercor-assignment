@@ -7,6 +7,7 @@ import ChatBubble from '../ChatBubble';
 import ChatBubbleBot from '../ChatBubbleBot';
 import { extractUsersForQuery } from "./processor/processNLP.js";
 import { generateUserCard } from '../UserCard/index.jsx';
+import { processNLPQuery } from './processor/processNLP.js';
 
 function ChatPage() {
   const [chats,setChats] = useState([])
@@ -18,7 +19,14 @@ function ChatPage() {
   async function handleSend(text) {
     chats.push(<ChatBubble message={text}/>)
     setChats([...chats])
-    const rankedUsers = await extractUsersForQuery(text)
+    var queryData =  await processNLPQuery(text);
+    if(!queryData.IsSkillPresent){
+      chats.push(<Update message={generateUserCard(rankedUsers[i])}/>)
+      setChats([...chats])
+      return;
+    }
+
+    const rankedUsers = await extractUsersForQuery(queryData)
     for(var i=0;i<rankedUsers.length;i++)
       {
         chats.push(<ChatBubbleBot message={generateUserCard(rankedUsers[i])}/>)
