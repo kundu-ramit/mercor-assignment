@@ -18,7 +18,7 @@ export function getMiscTags(companiesWorkedAt, schools, tags, miscValues) {
 }
 if(miscValues.includes("MNC"))
     {
-    for(var i=0;i<companiesWorkedAt.length;i++)
+    for(i=0;i<companiesWorkedAt.length;i++)
         {
             if(mncList.includes(companiesWorkedAt[i])){
                 points+=500
@@ -30,7 +30,7 @@ if(miscValues.includes("MNC"))
 
     if(miscValues.includes("STARTUP"))
         {
-        for(var i=0;i<companiesWorkedAt.length;i++)
+        for(i=0;i<companiesWorkedAt.length;i++)
             {
                 if(!mncList.includes(companiesWorkedAt[i])){
                     points+=500
