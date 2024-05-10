@@ -49,6 +49,8 @@ func applySeed(arg string) {
 		experience.FetchExperienceVectorOpenAi()
 	case "addexperiencevector":
 		experience.AddExperienceVectors()
+	case "getmiscellanousvector":
+		miscellanous.FetchMiscellanousVectorOpenAi()
 	case "addmiscellanousvector":
 		miscellanous.AddMiscellanousVectors()
 	}
