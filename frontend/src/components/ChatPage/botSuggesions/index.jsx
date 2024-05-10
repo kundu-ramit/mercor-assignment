@@ -31,9 +31,7 @@ function BotSuggestions({data, prompt , setInputBoxValue, startIndex, pushToChat
       <Button className='displayButton'
     onClick={() => setInputBoxValue(prompt)} 
     style={buttonStyle}>EDIT PROMPT</Button>
-          <Button className='displayButton'
-    onClick={() => pushToChat(data,prompt, rankedUsers, startIndex+3)} 
-    style={buttonStyle}>SHOW MORE</Button>
+          {IsSkillPresent?<Button className='displayButton' onClick={() => pushToChat(data,prompt, rankedUsers, startIndex+3)} style={buttonStyle}>SHOW MORE</Button>:<></>}
     </div>
     </Card>
   );

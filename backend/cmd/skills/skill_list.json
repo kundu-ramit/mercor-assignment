@@ -90,7 +90,7 @@
       "skillName": "GCP"
     },
     {
-      "customText": "Person is skilled in Go",
+      "customText": "Person is skilled in Go or Golang",
       "skillId": "5f9e70c9-7517-11ee-accf-42010a400014",
       "skillName": "Go"
     },

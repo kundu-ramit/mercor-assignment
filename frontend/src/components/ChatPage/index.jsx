@@ -30,8 +30,6 @@ function ChatPage() {
 
     const rankedUsers = await extractUsersForQuery(queryData)
     pushToChat(queryData,text, rankedUsers,0)
-      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue} userList/>)
-      setChats([...chats])
   }
 
   function pushToChat(queryData,text, rankedUsers, startIndex)
