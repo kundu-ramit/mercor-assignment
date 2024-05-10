@@ -25,7 +25,7 @@ function BotSuggestions({data, prompt , setInputBoxValue, startIndex, pushToChat
         {!IsBudgetPresent && 'Budget is not present. '}
         {!IsExperiencePresent && 'Experience is not present. '}
         {(!IsSkillPresent || !IsBudgetPresent || !IsExperiencePresent) && 'Please add them.'}
-        {(IsSkillPresent || IsBudgetPresent || IsExperiencePresent) && 'You have added all necessary parameters.Edit this prompt or enter a new one'}
+        {(IsSkillPresent || IsBudgetPresent || IsExperiencePresent) && 'Edit this prompt or enter a new one'}
       </p>
       <div style={{display:"flex"}}>
       <Button className='displayButton' onClick={() => setInputBoxValue(prompt)} style={buttonStyle}>EDIT PROMPT</Button>
