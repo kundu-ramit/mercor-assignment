@@ -1,0 +1,33 @@
+
+
+.userCard:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tagCard {
+    margin-left: 0%;
+    margin: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tagCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tagCardContent {
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.tagsContainer {
+    margin-top: 12px;
+    display: flex;
+}
+
+
+.ant-card-head-title {
+    font-weight: 'bold';
+    font-size: '26px'
+}

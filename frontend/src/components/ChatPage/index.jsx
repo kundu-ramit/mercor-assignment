@@ -6,6 +6,7 @@ import InputBox from '../InputBox';
 import ChatBubble from '../ChatBubble';
 import ChatBubbleBot from '../ChatBubbleBot';
 import { extractUsersForQuery } from "./processor/processNLP.js";
+import { generateUserCard } from '../UserCard/index.jsx';
 
 function ChatPage() {
   const [chats,setChats] = useState([])
@@ -20,7 +21,7 @@ function ChatPage() {
     const rankedUsers = await extractUsersForQuery(text)
     for(var i=0;i<rankedUsers.length;i++)
       {
-        chats.push(<ChatBubbleBot message={JSON.stringify(rankedUsers[i].tags)}/>)
+        chats.push(<ChatBubbleBot message={generateUserCard(rankedUsers[i])}/>)
         setChats([...chats])
       }
   }
