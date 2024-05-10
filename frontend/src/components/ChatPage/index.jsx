@@ -23,7 +23,7 @@ function ChatPage() {
     setChats([...chats])
     var queryData =  await processNLPQuery(text);
     if(!queryData.IsSkillPresent){
-      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue}/>)
+      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue} clearChat={()=>setChats([])}/>)
       setChats([...chats])
       return;
     }
@@ -41,7 +41,7 @@ function ChatPage() {
         chats.push(generateUserCard(rankedUsers[i]))
         setChats([...chats])
       }
-      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue} rankedUsers={rankedUsers} startIndex={startIndex} pushToChat={pushToChat}/>)
+      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue} rankedUsers={rankedUsers} startIndex={startIndex} pushToChat={pushToChat} clearChat={()=>setChats([])}/>)
       setChats([...chats])
   }
 

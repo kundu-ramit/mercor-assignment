@@ -16,7 +16,7 @@ const buttonStyle = {
   marginRight : '20px'
 }
 
-function BotSuggestions({data, prompt , setInputBoxValue, startIndex, pushToChat,rankedUsers}) {
+function BotSuggestions({data, prompt , setInputBoxValue, startIndex, pushToChat,rankedUsers, clearChat}) {
   const { IsSkillPresent, IsBudgetPresent, IsExperiencePresent } = data
   return (
     <Card style={{fontSize : "30px" ,borderRadius:30, marginBottom:"20px"}}>
@@ -28,10 +28,9 @@ function BotSuggestions({data, prompt , setInputBoxValue, startIndex, pushToChat
         {(IsSkillPresent || IsBudgetPresent || IsExperiencePresent) && 'You have added all necessary parameters.Edit this prompt or enter a new one'}
       </p>
       <div style={{display:"flex"}}>
-      <Button className='displayButton'
-    onClick={() => setInputBoxValue(prompt)} 
-    style={buttonStyle}>EDIT PROMPT</Button>
-          {IsSkillPresent?<Button className='displayButton' onClick={() => pushToChat(data,prompt, rankedUsers, startIndex+3)} style={buttonStyle}>SHOW MORE</Button>:<></>}
+      <Button className='displayButton' onClick={() => setInputBoxValue(prompt)} style={buttonStyle}>EDIT PROMPT</Button>
+      {IsSkillPresent?<Button className='displayButton' onClick={() => pushToChat(data,prompt, rankedUsers, startIndex+3)} style={buttonStyle}>SHOW MORE</Button>:<></>}
+      <Button className='displayButton' onClick={() => clearChat()} style={buttonStyle}>CLEAR ALL</Button>
     </div>
     </Card>
   );
