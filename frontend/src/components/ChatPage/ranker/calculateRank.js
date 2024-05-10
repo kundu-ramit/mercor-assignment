@@ -9,7 +9,6 @@ async function calculateRank(user, requirements) {
     points += calculateSkillPoints(user,requirements, tags);
     points += calculateBudgetPoints(user, requirements, tags);
     points += calculateMiscellaneousPoints(user, requirements, tags);
-    console.log(user,points)
     points += await calculateGithubPoints(user.ocrGithubUsername, tags);
 
     return { "userId": user.userId,"rank": points,"tags" : tags };

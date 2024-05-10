@@ -11,17 +11,19 @@ import BotSuggestions from './botSuggesions/index.jsx';
 
 function ChatPage() {
   const [chats,setChats] = useState([])
+  const [inputBoxValue,setInputBoxValue] = useState("")
 
   useEffect(() => {
     setChats([<Intro/>])
   }, []);
 
   async function handleSend(text) {
+    setInputBoxValue("");
     chats.push(<ChatBubble message={text}/>)
     setChats([...chats])
     var queryData =  await processNLPQuery(text);
     if(!queryData.IsSkillPresent){
-      chats.push(<BotSuggestions message={queryData}/>)
+      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue}/>)
       setChats([...chats])
       return;
     }
@@ -32,14 +34,14 @@ function ChatPage() {
         chats.push(generateUserCard(rankedUsers[i]))
         setChats([...chats])
       }
-      chats.push(<BotSuggestions message={generateUserCard(rankedUsers[i])}/>)
+      chats.push(<BotSuggestions data={queryData} prompt ={text} setInputBoxValue={setInputBoxValue}/>)
       setChats([...chats])
   }
 
   return (
     <div className='gradientBackground'>
     <ChatWindow chats = {chats}/>
-    <InputBox handleSend = {handleSend}/>
+    <InputBox handleSend = {handleSend} value={inputBoxValue} setValue={setInputBoxValue}/>
 
     
   </div>

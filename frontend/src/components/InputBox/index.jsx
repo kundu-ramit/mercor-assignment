@@ -4,9 +4,9 @@ import './index.css'
 
 const { TextArea } = Input;
 
-function InputBox({handleSend}) {
+function InputBox({handleSend,value, setValue}) {
 
-const [value,setValue] = useState("")
+
 
 
   return (

@@ -12,7 +12,6 @@ export async function decodeNLP(query) {
         'query': query
       }
     });
-    console.log(response.data)
     return response.data;
   } catch (error) {
     console.error('Error sending curl request:', error);

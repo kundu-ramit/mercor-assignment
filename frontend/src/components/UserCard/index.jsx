@@ -23,7 +23,7 @@ export function generateUserCard(userData) {
     };
 
     return (
-        <Card className="tagCard" title={name || "Unknown"}>
+        <Card className="tagCard" title={name || "Unknown"} >
             <Card>
                 <p style={{ fontWeight: 'bold', fontSize: '26px' }}>Email: {email || "Not provided"}</p>
                 <p style={{ fontWeight: 'bold', fontSize: '26px' }}>Github: {ocrGithubUsername || "Not provided"}</p>
