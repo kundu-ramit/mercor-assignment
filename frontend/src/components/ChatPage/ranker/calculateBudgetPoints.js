@@ -1,4 +1,4 @@
-const FULL_TIME_POINTS = 500;
+const FULL_TIME_POINTS = 700;
 const WITHIN_BUDGET_POINTS = 700;
 
 export function calculateBudgetPoints(user, requirements, tags) {
